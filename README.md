@@ -1,32 +1,22 @@
 # ACM Research Coding Challenge (Fall 2021)
+Language: Python 
+Libraries/API/Packages: NLTK, Vader, 
+Source of Information: NLTK Official Documentation at https://www.nltk.org/  
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#no-collaboration-policy)No Collaboration Policy
+How To Use: 
+    To test the program, simply run it on a chosen text editor. To change the body of text parsed and tested, make changes to the "input.txt" file. Once the program is run the output will appear in the terminal and show the results of Sentiment Analysis. 
 
-**You may not collaborate with anyone on this challenge.**  You  _are_  allowed to use Internet documentation. If you  _do_  use existing code (either from Github, Stack Overflow, or other sources),  **please cite your sources in the README**.
+Why I Chose NLTK: 
+    When set to complete this challenge, I was stuck between choosing the SpaCy Library and the NLTK Library. Both are excellent for any form of Natural Language Processing but having experience with SpaCy in the past I know that it is incredibly inefficient if one just wants to complete one specific task (in this case Sentiment Analysis) as the tokenizer completes a gamut of different tasks in one go. Technically the pipeline component TextBlob could be make things more efficient. Nevertheless, I wanted practice with NLTK so ultimately chose it. 
 
-## [](https://github.com/ACM-Research/Coding-Challenge-F21#submission-procedure)Submission Procedure
+How I Created The Program: 
+    As explained by the official documentation, VADER ( Valence Aware Dictionary for Sentiment Reasoning) is the recommended model for Sentiment Analysis so I used the SentimentIntensityAnalyzer class from there. After importing both NLTK and the SentimentIntensityAnalyzer class from Vader, I opened the "input.txt" file and stored all the text into a string named text. I loaded in the "punkt" model for tokenization (splitting apart text into individual words or sentences) and stored the tokenized text into a list called sentences. From there I proceeded to find the sentiment score of each individual sentence using the polarity_scores(sentence) function. This runs through a provided sentence and finds its overall score on a range from (-1) to (1). According to the documentation the greater the number in either direction, the more sure Vader is that a provided sentence is negative or positive. Anything between the polarity values of (-1 to -.5) is considered negative, between (-.5 to .5) neutral, and between (.5 to 1) positive. From there once I found the individual scores of each sentence, I acknowledged there's no sure way to confirm if the text as a whole is positive, negative, or neutral so I set to providing as much information on the text as possible. I list:
 
-Please follow the below instructions on how to submit your answers.
+        -   the sentiment score of each individual sentence 
+        -   the summation of all listed scores
+        -   the average score of the entire text
+        -   what percent of the text is positive, negative, and neutral respectively 
+        -   the final conclusion based off the previous point
 
-1.  Create a  **public**  fork of this repo and name it  `ACM-Research-Coding-Challenge-F21`. To fork this repo, click the button on the top right and click the "Fork" button.
-
-2.  Clone the fork of the repo to your computer using  `git clone [the URL of your clone]`. You may need to install Git for this (Google it).
-
-3.  Complete the Challenge based on the instructions below.
-
-4.  Submit your solution by filling out this [form](https://acmutd.typeform.com/to/zF1IcBGR).
-
-## Assessment Criteria 
-
-Submissions will be evaluated holistically and based on a combination of effort, validity of approach, analysis, adherence to the prompt, use of outside resources (encouraged), promptness of your submission, and other factors. Your approach and explanation (detailed below) is the most weighted criteria, and partial solutions are accepted. 
-
-## [](https://github.com/ACM-Research/Coding-Challenge-S21#question-one)Question One
-
-[Sentiment analysis](https://en.wikipedia.org/wiki/Sentiment_analysis) is a natural language processing technique that computes a sentiment score for a body of text. This sentiment score can quantify how positive, negative, or neutral the text is. The following dataset in  `input.txt`  contains a relatively large body of text.
-
-**Determine an overall sentiment score of the text in this file, explain what this score means, and contrast this score with what you expected.**  If your solution also provides different metrics about the text (magnitude, individual sentence score, etc.), feel free to add it to your explanation.   
-
-**You may use any programming language you feel most comfortable. We recommend Python because it is the easiest to implement. You're allowed to use any library/API you want to implement this**, just document which ones you used in this README file. Try to complete this as soon as possible as submissions are evaluated on a rolling basis.
-
-Regardless if you can or cannot answer the question, provide a short explanation of how you got your solution or how you think it can be solved in your README.md file. However, we highly recommend giving the challenge a try, you just might learn something new!
-
+Score of "input.txt": 
+    After running the program the score comes up as neutral, based off the number of sentences being neutral being greater than either those negative or positive. You'll notice that the first paragraph/excerpt is of a more negative tone (characters arguing) while the second is a bit more of a positive tone (character praising another) levelling out to a neutral tone between the two. Even with the more strikingly negative/positive sentences throughout the text, one can find that the number where it is neither positive nor negative dwarfs either of the two. For example, look at the sentence "Do you know, I had a dream an hour ago." Neither a program nor an individual reading can come to a conclusion on if such a sentence is positive or negative, so it makes most sense it is neutral. The text is littered with such sentences and because of it it confirms my beliefs that the text is neutral. 
