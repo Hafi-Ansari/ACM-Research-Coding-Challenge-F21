@@ -1,4 +1,4 @@
-# ACM Research Coding Challenge (Fall 2021)
+######  ACM Research Coding Challenge (Fall 2021)
 
 Language: Python 
 Libraries/API/Packages: NLTK, Vader, 
