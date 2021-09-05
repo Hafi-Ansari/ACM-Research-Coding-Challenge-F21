@@ -1,8 +1,8 @@
-######  ACM Research Coding Challenge (Fall 2021)
+#  ACM Research Coding Challenge (Fall 2021)
 
-Language: Python 
-Libraries/API/Packages: NLTK, Vader, 
-Source of Information: NLTK Official Documentation at https://www.nltk.org/  
+###### Language: Python 
+###### Libraries/API/Packages: NLTK, Vader, 
+###### Source of Information: NLTK Official Documentation at https://www.nltk.org/  
 
 How To Use: 
     To test the program, simply run it on a chosen text editor. To change the body of text parsed and tested, make changes to the "input.txt" file. Once the program is run the output will appear in the terminal and show the results of Sentiment Analysis. 
