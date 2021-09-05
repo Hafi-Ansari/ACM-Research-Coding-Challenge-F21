@@ -4,6 +4,10 @@
 ###### Libraries/API/Packages: NLTK, Vader, 
 ###### Source of Information: NLTK Official Documentation at https://www.nltk.org/  
 
+**Before You Use:** Download the nltk package using your CMD. Also before using you must issue the following commands in the Python Terminal:
+    >>import nltk
+    >>nltk.download('vader_lexicon')
+
 **How To Use:**
     To test the program, simply run it on a chosen text editor. To change the body of text parsed and tested, make changes to the "input.txt" file. Once the program is run the output will appear in the terminal and show the results of Sentiment Analysis. 
 
